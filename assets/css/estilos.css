@@ -1,0 +1,116 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "nav"
+        "filters"
+        "main"
+        "footer";
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    margin-bottom: 15px;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.filters {
+    grid-area: filters;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.filters h2 {
+    margin-top: 0;
+}
+
+.filters select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.main {
+    grid-area: main;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.image {
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1 1 calc(50% - 20px); /* Ajuste para móvil */
+}
+
+/* Pie de página */
+.footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Layout de escritorio (a partir de 576px) */
+@media (min-width: 576px) {
+    .container {
+        grid-template-areas:
+            "nav filters"
+            "nav main"
+            "nav footer";
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .nav {
+        padding: 30px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .image {
+        flex: 1 1 calc(33.33% - 20px); /* Ajuste para escritorio */
+    }
+}
+
